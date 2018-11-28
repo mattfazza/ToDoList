@@ -1,0 +1,21 @@
+body {
+  padding: 50px;
+  background-color: #686ec4;
+  font-family: sans-serif;
+
+}
+
+head #title {
+  font-family: sans-serif;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
