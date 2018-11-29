@@ -11,10 +11,12 @@ class ToDoList extends Component {
             items: []
         }
 
+        //these have to be binded in order to work
         this.addItem = this.addItem.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
     }
 
+    //If what is input in the input box isn't empty, create newItem
     addItem(e) {
         if (this._inputElement.value !== ""){
             var newItem = {
@@ -22,6 +24,7 @@ class ToDoList extends Component {
                 key: Date.now()
             };
 
+            //Utilize the previous state to append newItem
             this.setState((prevState) => {
                 return {
                     items: prevState.items.concat(newItem)
@@ -33,6 +36,8 @@ class ToDoList extends Component {
 
         console.log(this.state.items);
         
+        //This is here to provent the default behavior that was adding
+        //a bullet point before the item
         e.preventDefault();
 
     }
@@ -49,6 +54,7 @@ class ToDoList extends Component {
         });
     }
 
+    //render will provide the html snippet to be included as we update the list
     render() {
         return(
             <div className="ToDoListMain">
