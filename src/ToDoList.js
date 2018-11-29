@@ -11,10 +11,13 @@ class ToDoList extends Component {
             items: []
         }
 
+        //binding is required for this to work
         this.addItem = this.addItem.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
     }
 
+    //addItem will look at the input from the box and add a new item in case
+    //the input isn't empty
     addItem(e) {
         if (this._inputElement.value !== ""){
             var newItem = {
@@ -37,6 +40,8 @@ class ToDoList extends Component {
 
     }
 
+    //The key used to delete items comes from the the value 
+    //the user clicks
     deleteItem(key) {
         var filteredItems = this.state.items.filter(function(item)
         {
